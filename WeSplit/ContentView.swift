@@ -67,9 +67,11 @@ struct ContentView: View {
                 }
                 Section("the total amount for the check") {
                     Text(total, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                        .foregroundStyle(tipPercentage == 0 ? .red : .black )
                 }
                 Section("Amount per person") {
                     Text(totalPerPerson, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                        .foregroundStyle(tipPercentage == 0 ? .red : .black )
                 }
             }
             .navigationTitle("We Split")
