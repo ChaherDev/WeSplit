@@ -62,6 +62,7 @@ struct ContentView: View {
                     
                     Section("Total amount") {
                         Text(total, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                            .foregroundStyle(tipPercentage == 0 ? .red : .primary)
                     }
                 }
                 .navigationTitle("WeSplit")
@@ -73,8 +74,6 @@ struct ContentView: View {
                     }
                 }
             }
-            // .navigationTitle("WeSplit") ne marcherais pas, il faut être à l'intérieur
-            // de la NavigationStack
         }
         .padding()
     }
